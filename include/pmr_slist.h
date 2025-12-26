@@ -34,12 +34,11 @@ public:
     pmr_slist& operator=(pmr_slist&& other) noexcept {
         if (this != &other) {
             clear();
-            alloc_ = other.alloc_;
             head_ = other.head_;
             other.head_ = nullptr;
         }
-        return *this;
-    }
+    return *this;
+}
 
     template<typename... Args>
     void push_front(Args&&... args) {
